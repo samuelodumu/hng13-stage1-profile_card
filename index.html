@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+     <link rel="shortcut icon" href="img/favicon-32x32.png" type="image/x-icon">
+    <title>Samuel's Profile Card</title>
+</head>
+<body class="vh-100 bg-secondary ">
+    <div class="container-fluid justify-content-center d-flex">
+        <article class="profile-card col-lg-8 my-5" data-testid="test-profile-card">
+            <div class="bg-light mt-2 p-3 rounded-2">
+                <div class="row align-items-center justify-content-center text-dark-subtle">
+                    <figure class="col-lg-5 justify-self-center text-center mb-0">
+                        <p data-testid="test-user-time" class="fs-5 fw-bold" id="current-time"></p>
+                        <img src="img/samuel_profile.png" data-testid="test-user-avatar" class="w-75 h-auto rounded-circle mb-4" alt="profile owner picture" srcset="">
+                    </figure>
+                    <header class="col-lg-7" role="banner" aria-labelledby="profile-name">
+                        <h2 class="name" data-testid="test-user-name" id="profile-name" aria-label="Profile owner name">Samuel Odumu</h2>
+                        <p class="bio text-dark" data-testid="test-user-bio" aria-label="Short profile biography and personal description">Hi! I'm Samuel the frontend guy, I really like making stunning visuals and hope to get better at it with each new project I build. When I'm not working I like watching a good movie, reading a book, or playing chess. </p>
+                    </header>
+                </div>
+            </div>
+            <div class="socials bg-light rounded-2 mt-2 p-3 d-flex justify-content-center">
+                <nav data-testid="test-user-social-links" class="links text-decoration-none d-flex gap-4 list-unstyled mb-0 text-dark-subtle">
+                    <li>
+                        <i class="bi bi-dash-lg fs-5 text-dark"></i>
+                    </li>
+                    <li>
+                        <a href="https://www.threads.com/@themainsamuel" data-testid="test-user-social-threads" class="fs-5 text-dark" aria-label="Visit Samuel's Threads profile" target="_blank" rel="noopener noreferrer">
+                            <i class="bi bi-threads"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://x.com/themainsamuel" data-testid="test-user-social-X" class="fs-5 text-dark" aria-label="Visit Samuel's Twitter profile" target="_blank" rel="noopener noreferrer">
+                            <i class="bi bi-twitter-x"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/samuelodumu" data-testid="test-user-social-linkedin" class="fs-5 text-dark" aria-label="Visit Samuel's LinkedIn profile" target="_blank" rel="noopener noreferrer">
+                            <i class="bi bi-linkedin"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/samuelodumu" data-testid="test-user-social-github" class="fs-5 text-dark" aria-label="Visit Samuel's GitHub profile" target="_blank" rel="noopener noreferrer">
+                            <i class="bi bi-github"></i>
+                        </a>
+                    </li>
+                </nav>
+            </div>
+            <section class="hobbies mt-2 p-3 bg-light rounded-2">
+                <p class="fs-5 fw-bold mx-2">Hobbies:</p>
+                <ul class="list-unstyled d-flex gap-4 justify-content-center mb-0 flex-wrap" data-testid="test-user-hobbies">
+                    <li class="p-2 bg-secondary-subtle rounded-1">Listening to music</li>
+                    <li class="p-2 bg-secondary-subtle rounded-1">Reading books</li>
+                    <li class="p-2 bg-secondary-subtle rounded-1">Playing chess</li>
+                    <li class="p-2 bg-secondary-subtle rounded-1">Learning new languages</li>
+                    <li class="p-2 bg-secondary-subtle rounded-1">Playing table tennis</li>
+                </ul>
+            </section>
+            <section class="dislikes mt-2 p-3 bg-light rounded-2">
+                <p class="fs-5 fw-bold mx-2">Dislikes:</p>
+                <ul class="list-unstyled d-flex gap-4 justify-content-center mb-0 flex-wrap" data-testid="test-user-dislikes">
+                    <li class="p-2 bg-secondary-subtle rounded-1">Loud chewing</li>
+                    <li class="p-2 bg-secondary-subtle rounded-1">Disorganized spaces</li>
+                    <li class="p-2 bg-secondary-subtle rounded-1">Dishonesty</li>
+                    <li class="p-2 bg-secondary-subtle rounded-1">Disorganized code</li>
+                    <li class="p-2 bg-secondary-subtle rounded-1">Body odour</li>
+                </ul>
+            </section>
+        </article>
+    </div>
+    <script>
+        // get and insert current time in UTC format
+        function updateTime() {
+            let now = new Date();
+
+            let hours = now.getUTCHours().toString().padStart(2, '0');
+            let minutes = now.getUTCMinutes().toString().padStart(2, '0');
+            let seconds = now.getUTCSeconds().toString().padStart(2, '0');
+            let milliseconds = now.getUTCMilliseconds().toString().padStart(3, '0');
+            
+            // Format: HH:MM:SS.mmm GMT
+            let timeWithMilliseconds = `Time: ${hours}:${minutes}:${seconds}.${milliseconds} GMT`;
+            document.getElementById('current-time').innerText = timeWithMilliseconds;
+        }
+
+        setInterval(updateTime, 10);
+        updateTime(); // initial call to prevent delay
+    </script>
+</body>
+</html>
