@@ -1,6 +1,6 @@
-# hng13-stage1-profile_app
+# My profile app
 
-A responsive profile card website showcasing personal information, social links, a real-time UTC clock, and about and contact pages. This is an improvement on the HNG Stage 0 task with enhanced accessibility and interactive features.
+A responsive profile card website showcasing personal information, social links, a real-time UTC clock, and about and contact pages. This is an improvement on the HNG Stage 0 task with 2 more pages, enhanced accessibility and interactive features.
 
 ## Features
 
@@ -19,17 +19,38 @@ A responsive profile card website showcasing personal information, social links,
 - Bootstrap Icons 1.13.1
 
 ## Project Structure
-
 ```
 hng13-stage1-profile_card/
 │
-├── index.html          # Main HTML file
+├── index.html          # Main profile card page
+├── about.html          # About me page with personal details
+├── contact.html        # Contact form page
 ├── style.css          # Custom CSS styles
 ├── img/               # Image assets
 │   ├── samuel_profile.png
 │   └── favicon-32x32.png
 └── README.md          # Project documentation
 ```
+
+## Pages Overview
+
+### Main Profile Card (index.html)
+- Real-time UTC clock with milliseconds
+- Profile picture and bio
+- Social media links
+- Navigation to other pages
+
+### About Page (about.html)
+- Personal biography
+- Program goals and aspirations
+- Areas of growth and reflection
+- Note to future self
+
+### Contact Page (contact.html)
+- Contact form with validation
+- Form fields: Name, Email, Subject, Message
+- Client-side form validation
+- Success/error message handling
 
 ## Getting Started
 
@@ -104,12 +125,14 @@ Then open `http://localhost:8000` in your browser.
 
 ## Customization
 
-### Updating Profile Information
+### Updating Content
 
-1. **Name and Bio**: Edit the content in `index.html` lines 24-25
-2. **Profile Picture**: Replace `img/samuel_profile.png` with your image
-3. **Social Links**: Update the `href` attributes in the social links section
-4. **Hobbies/Dislikes**: Add content to the respective sections
+1. **Profile Information**: Edit `index.html` for main profile details
+2. **About Content**: Modify sections in `about.html` for personal information
+3. **Contact Form**: Customize form fields and validation in `contact.html`
+4. **Navigation**: Update navbar links across all pages as needed
+5. **Profile Picture**: Replace `img/samuel_profile.png` with your image
+6. **Social Links**: Update the `href` attributes in the social links section
 
 ### Styling
 
